@@ -1,33 +1,76 @@
+가상 클래스 선택자
+기호 :하나 있는거(가상 클래스 선태자), ::(가상 요소 선택자)
 
-가상 클래스 선택자 - hover, active, focus
+5. First Child 
+E가 형제 요소 중 첫번째 요소라면 선택(같은 부모)
+기호 E:first-child
 
-1.hover
-E에 마우스(포인터)가 올라가 있는 동안에만 E선택 (작동)
-E:hover
-
-a:hover {
-  font-weight: bold;
-  font-size: 20px;
-
-2.active
-E를 마우스로 클릭하는 동안에만 E선택(작동)
-E:active
-
-.box {
-  width: 100px;
+.fruits li:first-child {
+  color:red;
 }
 
-3.focus
-  E가 포커스 된 동안에만 E 선택
-  E:foucs
-대화형 콘텐츠에서만 사용가능(input, img, tabindex)
+6.last-child
 
-input {
-  width: 100px;
-  outline:none;
-  border: 1px solid lightgray;
-  padding: 5px 10px
+가상 클래스 선택자
+기호 :하나 있는거(가상 클래스 선태자), ::(가상 요소 선택자)
+
+7.nth :nth-child()
+e가 형제 요소 중 n번째 요소라면 선택
+(n 키워드 사용 시 0부터 해석,zero-base)
+기호 - E:nth-child(n)
+
+.fruits li:nth-child(2n) {
+  color; red;
 }
-input:foucs {
-  border-color: redx;
+/* 짝수만 선택 가능 */
+
+.fruits li:nth-child(n+3) {
+  color; red;
 }
+/* 3번째 요소부터 선택 */
+
+.fruits p:nth-child(1) {
+  color; red;
+}
+/* 복합 선택자 해석을 할 때는 오른쪽에서 왼쪽으로 해석하는 것이 더 정확 
+<div class="fruits">
+<div>딸기</div>
+<p>사과</p>
+</div>
+해석:.fruits의 첫번째 자식 요소가 <p></p>가 아니기 때문에 선택되지 않는다. */
+
+
+가상 클래스 선택자
+
+기호 :하나 있는거(가상 클래스 선택자), ::(가상 요소 선택자)
+
+8. :nth-of-type()
+  E의 타입(태그이름)과 동일한 타입인 형제 요소 중 E가 n번째 요소라면 선택
+  (n 키워드 사용 시 0부터 해석)
+기호 - E:nth-of-type()
+주의점은 type는 태그를 찾는 목적으로 사용해야 함
+
+9.not (부정 선택자)
+S가 아닌 E 선택
+기호 - E:not(S)
+
+가상 요소 선택자
+1.before
+e요소 내부의 앞에, 내용을 삽입
+기호 E::
+
+ul {
+  font-size: 40px;
+}
+ul li:before {
+  content: "숫자";
+  font-weight:bold;
+  color: red;
+  background: tomato;
+  margin-right: 20px;
+}
+/* 주의점: content 무조건 있어야 함, 내용을 적지 않더라도 (content: "";) 필수로 들어가야 한다 */
+
+9.not (부정 선택자)
+S가 아닌 E 선택
+기호 - E:not(S)
