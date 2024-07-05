@@ -74,3 +74,36 @@ ul li:before {
 9.not (부정 선택자)
 S가 아닌 E 선택
 기호 - E:not(S)
+
+가상 요소 선택자
+
+1.before
+
+e요소 내부의 앞에, 내용을 삽입
+
+기호 E::
+
+
+
+
+ul {
+
+  font-size: 40px;
+
+}
+
+ul li:before {
+
+  content: "숫자";
+
+  font-weight:bold;
+
+  color: red;
+
+  background: tomato;
+
+  margin-right: 20px;
+
+}
+
+/* 주의점: content 무조건 있어야 함, 내용을 적지 않더라도 (content: "";) 필수로 들어가야 한다 */
